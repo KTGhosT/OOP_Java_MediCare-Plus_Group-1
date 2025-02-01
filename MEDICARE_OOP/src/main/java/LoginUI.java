@@ -203,8 +203,8 @@ public class LoginUI extends javax.swing.JFrame {
         if (username.equals("admin") && password.equals("1234")) {
         JOptionPane.showMessageDialog(this, "Login Successful!");
         
-        DashboardUI dashboard = new DashboardUI();
-        dashboard.setVisible(true);
+        //DashboardUI dashboard = new DashboardUI();
+        //dashboard.setVisible(true);
         
         this.dispose();
         
