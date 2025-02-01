@@ -1,3 +1,5 @@
+package FrontEnd;
+
 
 import javax.swing.JOptionPane;
 
@@ -105,8 +107,6 @@ public class LoginUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Documents\\NetBeansProjects\\Icons\\png-transparent-medicare-advantage-insurance-medicare-symbol-s-blue-hand-logo-thumbnail-removebg-preview (1).png")); // NOI18N
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -203,8 +203,8 @@ public class LoginUI extends javax.swing.JFrame {
         if (username.equals("admin") && password.equals("1234")) {
         JOptionPane.showMessageDialog(this, "Login Successful!");
         
-        DashboardUI dashboard = new DashboardUI();
-        dashboard.setVisible(true);
+        //DashboardUI dashboard = new DashboardUI();
+        //dashboard.setVisible(true);
         
         this.dispose();
         
