@@ -30,7 +30,7 @@ public class DashboardUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        doctorsbtn = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -71,10 +71,10 @@ public class DashboardUI extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Documents\\NetBeansProjects\\Icons\\medical-team (2).png")); // NOI18N
 
-        jButton1.setText("DOCTORS");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        doctorsbtn.setText("DOCTORS");
+        doctorsbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                doctorsbtnActionPerformed(evt);
             }
         });
 
@@ -131,7 +131,7 @@ public class DashboardUI extends javax.swing.JFrame {
                                 .addGap(57, 57, 57)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel4)
-                                    .addComponent(jButton1))
+                                    .addComponent(doctorsbtn))
                                 .addGap(98, 98, 98))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addContainerGap()
@@ -169,7 +169,7 @@ public class DashboardUI extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
+                            .addComponent(doctorsbtn)
                             .addComponent(jButton3)
                             .addComponent(jButton2)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -209,9 +209,13 @@ public class DashboardUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void doctorsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorsbtnActionPerformed
+        Hospital_Doctor_Records doctor = new Hospital_Doctor_Records();
+        doctor.setVisible(true);
+        System.out.println("working");
+        
+        this.dispose();
+    }//GEN-LAST:event_doctorsbtnActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -266,7 +270,7 @@ public class DashboardUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton doctorsbtn;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
