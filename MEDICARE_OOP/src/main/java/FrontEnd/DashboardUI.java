@@ -32,14 +32,14 @@ public class DashboardUI extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         doctorsbtn = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        inventorybtn = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        appointmentbtn = new javax.swing.JButton();
+        reportbtn = new javax.swing.JButton();
+        patientsbtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,10 +81,10 @@ public class DashboardUI extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Documents\\NetBeansProjects\\Icons\\hospitalisation (1).png")); // NOI18N
 
-        jButton2.setText("INVENTORY");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        inventorybtn.setText("INVENTORY");
+        inventorybtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                inventorybtnActionPerformed(evt);
             }
         });
 
@@ -98,24 +98,24 @@ public class DashboardUI extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Documents\\NetBeansProjects\\Icons\\healthcare (1).png")); // NOI18N
 
-        jButton5.setText("MAKE AN APPOINTMENT");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        appointmentbtn.setText("MAKE AN APPOINTMENT");
+        appointmentbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                appointmentbtnActionPerformed(evt);
             }
         });
 
-        jButton4.setText("GENERATE REPORT");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        reportbtn.setText("GENERATE REPORT");
+        reportbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                reportbtnActionPerformed(evt);
             }
         });
 
-        jButton3.setText("PATIENTS");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        patientsbtn.setText("PATIENTS");
+        patientsbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                patientsbtnActionPerformed(evt);
             }
         });
 
@@ -140,12 +140,12 @@ public class DashboardUI extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton3)
+                                    .addComponent(patientsbtn)
                                     .addComponent(jLabel6))
                                 .addGap(81, 81, 81)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8)
-                                    .addComponent(jButton2)))
+                                    .addComponent(inventorybtn)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(143, 143, 143)
                                 .addComponent(jLabel7))))
@@ -153,9 +153,9 @@ public class DashboardUI extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel2)
                         .addGap(33, 33, 33)
-                        .addComponent(jButton5)
+                        .addComponent(appointmentbtn)
                         .addGap(121, 121, 121)
-                        .addComponent(jButton4)))
+                        .addComponent(reportbtn)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -170,8 +170,8 @@ public class DashboardUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(doctorsbtn)
-                            .addComponent(jButton3)
-                            .addComponent(jButton2)))
+                            .addComponent(patientsbtn)
+                            .addComponent(inventorybtn)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(jLabel6)
@@ -182,8 +182,8 @@ public class DashboardUI extends javax.swing.JFrame {
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
-                    .addComponent(jButton4))
+                    .addComponent(appointmentbtn)
+                    .addComponent(reportbtn))
                 .addContainerGap(32, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -217,21 +217,31 @@ public class DashboardUI extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_doctorsbtnActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void inventorybtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventorybtnActionPerformed
+       PharmacyInventory inventory = new PharmacyInventory();
+       inventory.setVisible(true);
+       
+       this.dispose();
+    }//GEN-LAST:event_inventorybtnActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void appointmentbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appointmentbtnActionPerformed
+        BookAppointments appointment = new BookAppointments();
+        appointment.setVisible(true);
+        
+        this.dispose();
+    }//GEN-LAST:event_appointmentbtnActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void reportbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportbtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_reportbtnActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void patientsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientsbtnActionPerformed
+        
+        ManagePatientRecord patient = new ManagePatientRecord ();
+        patient.setVisible(true);
+        
+        this.dispose();
+    }//GEN-LAST:event_patientsbtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -270,11 +280,9 @@ public class DashboardUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton appointmentbtn;
     private javax.swing.JButton doctorsbtn;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton inventorybtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -284,5 +292,7 @@ public class DashboardUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton patientsbtn;
+    private javax.swing.JButton reportbtn;
     // End of variables declaration//GEN-END:variables
 }
