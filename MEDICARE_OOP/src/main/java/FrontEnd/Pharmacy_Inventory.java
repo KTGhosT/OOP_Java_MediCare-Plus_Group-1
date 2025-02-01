@@ -86,7 +86,7 @@ public class Pharmacy_Inventory extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Space Mono", 0, 12)); // NOI18N
         jLabel5.setText("Availablity");
 
-        jButton1.setBackground(new java.awt.Color(102, 204, 255));
+        jButton1.setBackground(new java.awt.Color(0, 51, 204));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Home");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -95,11 +95,16 @@ public class Pharmacy_Inventory extends javax.swing.JPanel {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(0, 153, 255));
+        jButton2.setBackground(new java.awt.Color(0, 51, 204));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("ADD");
 
+        jButton3.setBackground(new java.awt.Color(0, 51, 204));
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("UPDATE");
 
+        jButton4.setBackground(new java.awt.Color(0, 51, 204));
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("REMOVE");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
