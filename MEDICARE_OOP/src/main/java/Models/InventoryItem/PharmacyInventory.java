@@ -24,7 +24,7 @@ public class PharmacyInventory {
     }
 
     // Update an item in the inventory
-    public void updateItem(String inventoryID, String newName, String newDescription, boolean newAvailability) {
+    public void updateItem(String inventoryID, String newName, String newDescription, String  newAvailability) {
         for (InventoryItem item : inventoryItems) {
             if (item.getInventoryID().equals(inventoryID)) {
                 item.setInventoryName(newName);

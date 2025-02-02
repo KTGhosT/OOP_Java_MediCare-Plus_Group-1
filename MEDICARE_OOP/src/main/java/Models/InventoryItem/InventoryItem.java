@@ -12,9 +12,9 @@ public class InventoryItem {
     private String inventoryID;
     private String inventoryName;
     private String description;
-    private boolean availability;
+    private String availability;
 
-    public InventoryItem(String inventoryID, String inventoryName, String description, boolean availability) {
+    public InventoryItem(String inventoryID, String inventoryName, String description, String  availability) {
         this.inventoryID = inventoryID;
         this.inventoryName = inventoryName;
         this.description = description;
@@ -46,11 +46,11 @@ public class InventoryItem {
         this.description = description;
     }
 
-    public boolean isAvailability() {
+    public String  isAvailability() {
         return availability;
     }
 
-    public void setAvailability(boolean availability) {
+    public void setAvailability(String  availability) {
         this.availability = availability;
     }
 }
