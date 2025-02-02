@@ -10,4 +10,14 @@
         <maven.compiler.release>17</maven.compiler.release>
         <exec.mainClass>com.mycompany.medicare_oop.MEDICARE_OOP</exec.mainClass>
     </properties>
+    
+    <dependencies>
+    <!-- MySQL Connector Dependency -->
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.33</version>
+    </dependency>
+</dependencies>
+
 </project>
