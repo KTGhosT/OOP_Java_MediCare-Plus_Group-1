@@ -32,6 +32,13 @@ public class PharmacyInventory extends javax.swing.JFrame {
 ));
 
     }
+    private void clearFields() {
+    inventoryID.setText("");
+    inventoryName.setText("");
+    description.setText("");
+    availability.setText("");
+}
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -207,10 +214,14 @@ public class PharmacyInventory extends javax.swing.JFrame {
                                 .addComponent(add_btn)
                                 .addGap(42, 42, 42)
                                 .addComponent(update_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(remove_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(view_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 145, Short.MAX_VALUE)
+                                .addComponent(view_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(remove_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(100, 100, 100)
@@ -318,6 +329,7 @@ public class PharmacyInventory extends javax.swing.JFrame {
             int rowsInserted = stmt.executeUpdate();
             if (rowsInserted > 0) {
                 JOptionPane.showMessageDialog(this, "Inventory record saved successfully!");
+                clearFields();
             }
         }
     } catch (Exception e) {
@@ -367,8 +379,10 @@ public class PharmacyInventory extends javax.swing.JFrame {
             int rowsUpdated = stmt.executeUpdate();
             if (rowsUpdated > 0) {
                 JOptionPane.showMessageDialog(this, "Inventory record updated successfully!");
+                clearFields();
             } else {
                 JOptionPane.showMessageDialog(this, "No matching record found to update!", "Update Error", JOptionPane.WARNING_MESSAGE);
+                clearFields();
             }
         }
     } catch (Exception e) {
@@ -413,8 +427,10 @@ public class PharmacyInventory extends javax.swing.JFrame {
             int rowsDeleted = stmt.executeUpdate();
             if (rowsDeleted > 0) {
                 JOptionPane.showMessageDialog(this, "Inventory record deleted successfully!");
+                clearFields();
             } else {
                 JOptionPane.showMessageDialog(this, "No matching record found to delete!", "Delete Error", JOptionPane.WARNING_MESSAGE);
+                clearFields();
             }
         }
     } catch (Exception e) {
