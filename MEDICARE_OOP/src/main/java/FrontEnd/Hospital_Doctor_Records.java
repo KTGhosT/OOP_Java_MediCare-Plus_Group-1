@@ -16,11 +16,9 @@ public class Hospital_Doctor_Records extends javax.swing.JFrame {
      */
     public Hospital_Doctor_Records() {
         initComponents();
-        setLocationRelativeTo(null);
+        
     }
-    Connection Con = null;
-    Statement St = null;
-    ResultSet Rs = null;
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
