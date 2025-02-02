@@ -296,7 +296,7 @@ public class ManagePatientRecord extends javax.swing.JFrame {
     private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed
                                        
     // Get values from input fields
-    int id = idtxt.getSelectedItem().toString();
+    String id = idtxt.getText();
     String name = nametxt.getText();
     String age = agetxt.getText();
     String gender = gendertxt.getText();
@@ -313,7 +313,7 @@ public class ManagePatientRecord extends javax.swing.JFrame {
         stmt.setString(3, age);
         stmt.setString(4, gender);
         stmt.setString(5, category);
-        stmt.setString(5, email);
+        stmt.setString(6, email);
         
         // Execute insert query
         int rowsInserted = stmt.executeUpdate();
