@@ -45,7 +45,7 @@ public class PharmacyInventory extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         description = new javax.swing.JTextField();
         availability = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        home_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -115,12 +115,12 @@ public class PharmacyInventory extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Space Mono", 0, 12)); // NOI18N
         jLabel5.setText("Availablity");
 
-        jButton1.setBackground(new java.awt.Color(0, 51, 204));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Home");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        home_btn.setBackground(new java.awt.Color(0, 51, 204));
+        home_btn.setForeground(new java.awt.Color(255, 255, 255));
+        home_btn.setText("Home");
+        home_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                home_btnActionPerformed(evt);
             }
         });
 
@@ -132,7 +132,7 @@ public class PharmacyInventory extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
+                    .addComponent(home_btn)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(add_btn)
@@ -159,7 +159,7 @@ public class PharmacyInventory extends javax.swing.JFrame {
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jButton1)
+                .addComponent(home_btn)
                 .addGap(93, 93, 93)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -191,9 +191,9 @@ public class PharmacyInventory extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inventoryIDActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void home_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_home_btnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_home_btnActionPerformed
 
     private void add_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_btnActionPerformed
         // TODO add your handling code here:
@@ -223,8 +223,8 @@ addButton.addActionListener(new ActionListener() {
         inventory.addItem(newItem);
         
         // Optional: Display a success message or update the UI
-        System.out.println("Item added: " + newItem.getInventoryName());
-       // JOptionPane.showMessageDialog(this,"new item added sucessfully");
+       // System.out.println("Item added: " + newItem.getInventoryName());
+       JOptionPane.showMessageDialog(rootPane,"item added sucessfully..!");
     }
 });
     }//GEN-LAST:event_add_btnActionPerformed
@@ -274,9 +274,9 @@ addButton.addActionListener(new ActionListener() {
     private javax.swing.JButton add_btn;
     private javax.swing.JTextField availability;
     private javax.swing.JTextField description;
+    private javax.swing.JButton home_btn;
     private javax.swing.JTextField inventoryID;
     private javax.swing.JTextField inventoryName;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
