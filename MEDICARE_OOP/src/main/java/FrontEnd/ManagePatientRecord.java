@@ -353,8 +353,8 @@ public class ManagePatientRecord extends javax.swing.JFrame {
     private void HOMEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HOMEActionPerformed
         this.setVisible(false); 
     
-    DashboardUI home = new DashboardUI();
-    home.setVisible(true); 
+    DashboardUI homes = new DashboardUI();
+    homes.setVisible(true); 
     }//GEN-LAST:event_HOMEActionPerformed
 
     private void ADDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ADDActionPerformed

@@ -334,7 +334,7 @@ public class PharmacyInventory extends javax.swing.JFrame {
         }
     } catch (Exception e) {
         JOptionPane.showMessageDialog(this, "Error saving inventory record: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        e.printStackTrace(); // Log the error for debugging
+        // Log the error for debugging
     }
 
     }//GEN-LAST:event_add_btnActionPerformed
@@ -387,7 +387,7 @@ public class PharmacyInventory extends javax.swing.JFrame {
         }
     } catch (Exception e) {
         JOptionPane.showMessageDialog(this, "Error updating inventory record: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        e.printStackTrace(); // Log the error for debugging
+        // Log the error for debugging
     }
 
         
