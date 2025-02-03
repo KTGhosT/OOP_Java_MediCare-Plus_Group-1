@@ -239,8 +239,8 @@ public class DashboardUI extends javax.swing.JFrame {
     }//GEN-LAST:event_inventorybtnActionPerformed
 
     private void appointmentbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appointmentbtnActionPerformed
-        BookAppointments appointment = new BookAppointments();
-        appointment.setVisible(true);
+       // BookAppointments appointment = new BookAppointments();
+       // appointment.setVisible(true);
         
         this.dispose();
     }//GEN-LAST:event_appointmentbtnActionPerformed
