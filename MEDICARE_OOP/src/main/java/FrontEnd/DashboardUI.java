@@ -45,25 +45,24 @@ public class DashboardUI extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Russo One", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("MediCare + ");
+        jLabel1.setText("MediCare + Health Care ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(73, 73, 73)
+                .addGap(88, 88, 88)
                 .addComponent(jLabel1)
-                .addContainerGap(408, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap())
+                .addGap(0, 48, Short.MAX_VALUE)
+                .addComponent(jLabel1))
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -71,6 +70,9 @@ public class DashboardUI extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Documents\\NetBeansProjects\\Icons\\medical-team (2).png")); // NOI18N
 
+        doctorsbtn.setBackground(new java.awt.Color(51, 153, 255));
+        doctorsbtn.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        doctorsbtn.setForeground(new java.awt.Color(255, 255, 255));
         doctorsbtn.setText("DOCTORS");
         doctorsbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,6 +83,9 @@ public class DashboardUI extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Documents\\NetBeansProjects\\Icons\\hospitalisation (1).png")); // NOI18N
 
+        inventorybtn.setBackground(new java.awt.Color(51, 153, 255));
+        inventorybtn.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        inventorybtn.setForeground(new java.awt.Color(255, 255, 255));
         inventorybtn.setText("INVENTORY");
         inventorybtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,6 +103,9 @@ public class DashboardUI extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Documents\\NetBeansProjects\\Icons\\healthcare (1).png")); // NOI18N
 
+        appointmentbtn.setBackground(new java.awt.Color(51, 153, 255));
+        appointmentbtn.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        appointmentbtn.setForeground(new java.awt.Color(255, 255, 255));
         appointmentbtn.setText("MAKE AN APPOINTMENT");
         appointmentbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,6 +113,9 @@ public class DashboardUI extends javax.swing.JFrame {
             }
         });
 
+        reportbtn.setBackground(new java.awt.Color(51, 153, 255));
+        reportbtn.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        reportbtn.setForeground(new java.awt.Color(255, 255, 255));
         reportbtn.setText("GENERATE REPORT");
         reportbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,6 +123,9 @@ public class DashboardUI extends javax.swing.JFrame {
             }
         });
 
+        patientsbtn.setBackground(new java.awt.Color(51, 153, 255));
+        patientsbtn.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
+        patientsbtn.setForeground(new java.awt.Color(255, 255, 255));
         patientsbtn.setText("PATIENTS");
         patientsbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
