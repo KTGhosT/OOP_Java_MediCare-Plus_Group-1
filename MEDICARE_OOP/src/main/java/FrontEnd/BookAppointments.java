@@ -89,6 +89,11 @@ public class BookAppointments extends javax.swing.JFrame {
         GETDETAILS.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         GETDETAILS.setForeground(new java.awt.Color(255, 255, 255));
         GETDETAILS.setText("GET DETAILS");
+        GETDETAILS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GETDETAILSActionPerformed(evt);
+            }
+        });
 
         DELETE.setBackground(new java.awt.Color(0, 102, 204));
         DELETE.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -114,6 +119,11 @@ public class BookAppointments extends javax.swing.JFrame {
         BOOK.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         BOOK.setForeground(new java.awt.Color(255, 255, 255));
         BOOK.setText("BOOK");
+        BOOK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BOOKActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PIDLayout = new javax.swing.GroupLayout(PID);
         PID.setLayout(PIDLayout);
@@ -254,6 +264,14 @@ public class BookAppointments extends javax.swing.JFrame {
     private void ALLTHEPATIENTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ALLTHEPATIENTActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ALLTHEPATIENTActionPerformed
+
+    private void BOOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOOKActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BOOKActionPerformed
+
+    private void GETDETAILSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GETDETAILSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GETDETAILSActionPerformed
 
     /**
      * @param args the command line arguments

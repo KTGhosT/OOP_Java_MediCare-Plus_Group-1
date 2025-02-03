@@ -109,28 +109,26 @@
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="EMAIL" min="-2" pref="37" max="-2" attributes="0"/>
-                                              <EmptySpace pref="137" max="32767" attributes="0"/>
+                                              <EmptySpace pref="274" max="32767" attributes="0"/>
                                               <Component id="mail" min="-2" pref="244" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="PCAT" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="PID" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                                  <Component id="AGE" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
+                                                  <Component id="PN" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Group type="102" alignment="0" attributes="0">
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="PID" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                                          <Component id="AGE" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
-                                                          <Component id="PN" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="GENDER" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                      <Component id="GENDER" min="-2" pref="55" max="-2" attributes="0"/>
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="pname" min="-2" pref="244" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <EmptySpace max="32767" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                                   <Component id="catageory" alignment="0" pref="244" max="32767" attributes="0"/>
                                                   <Component id="Gender" alignment="0" max="32767" attributes="0"/>
                                                   <Component id="pid" alignment="1" max="32767" attributes="0"/>
-                                                  <Component id="pname" alignment="1" max="32767" attributes="0"/>
                                                   <Component id="Age" alignment="1" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
@@ -166,19 +164,24 @@
                           </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="PN" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="pname" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="PN" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="AGE" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="Age" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="GENDER" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Gender" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="GENDER" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="Gender" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                              <Component id="pname" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -192,7 +195,7 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="224" max="-2" attributes="0"/>
-                      <EmptySpace pref="25" max="32767" attributes="0"/>
+                      <EmptySpace pref="31" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="ADD" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="REMOVE" alignment="3" min="-2" max="-2" attributes="0"/>
