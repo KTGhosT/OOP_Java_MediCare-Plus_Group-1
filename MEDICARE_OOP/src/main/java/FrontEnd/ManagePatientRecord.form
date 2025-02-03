@@ -49,7 +49,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="176" max="-2" attributes="0"/>
-                  <EmptySpace pref="12" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -86,7 +86,7 @@
                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Component id="DELETEPATIENT" min="-2" max="-2" attributes="0"/>
@@ -95,46 +95,54 @@
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Component id="ADD" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                                       <Component id="REMOVE" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
                                       <Component id="UPDATE" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="EMAIL" min="-2" pref="37" max="-2" attributes="0"/>
-                                      <EmptySpace pref="51" max="32767" attributes="0"/>
-                                      <Component id="mailtxt" min="-2" pref="244" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="PCAT" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="EMAIL" min="-2" pref="37" max="-2" attributes="0"/>
+                                              <EmptySpace pref="137" max="32767" attributes="0"/>
+                                              <Component id="mail" min="-2" pref="244" max="-2" attributes="0"/>
+                                          </Group>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="PID" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                                  <Component id="AGE" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
-                                                  <Component id="PN" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="GENDER" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
+                                                  <Component id="PCAT" alignment="0" max="32767" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="PID" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                                          <Component id="AGE" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
+                                                          <Component id="PN" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="GENDER" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                  </Group>
                                               </Group>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="catageory" alignment="0" pref="244" max="32767" attributes="0"/>
+                                                  <Component id="Gender" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="pid" alignment="1" max="32767" attributes="0"/>
+                                                  <Component id="pname" alignment="1" max="32767" attributes="0"/>
+                                                  <Component id="Age" alignment="1" max="32767" attributes="0"/>
+                                              </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="categeorytxt" alignment="0" pref="244" max="32767" attributes="0"/>
-                                          <Component id="gendertxt" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="idtxt" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="nametxt" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="agetxt" alignment="1" max="32767" attributes="0"/>
-                                      </Group>
+                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                      <Component id="HOME" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jScrollPane1" min="-2" pref="510" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="HOME" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -149,7 +157,7 @@
                               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="PID" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="idtxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="pid" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -160,29 +168,31 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="PN" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="nametxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="pname" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="AGE" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="agetxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Age" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="GENDER" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="gendertxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Gender" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="PCAT" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="categeorytxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="catageory" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="EMAIL" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="mailtxt" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="mail" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="203" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="224" max="-2" attributes="0"/>
+                      <EmptySpace pref="25" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="ADD" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="REMOVE" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -224,24 +234,24 @@
                 <Property name="text" type="java.lang.String" value="Catageory"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="idtxt">
+            <Component class="javax.swing.JTextField" name="pid">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="idtxtActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pidActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="nametxt">
+            <Component class="javax.swing.JTextField" name="pname">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nametxtActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pnameActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="agetxt">
+            <Component class="javax.swing.JTextField" name="Age">
             </Component>
-            <Component class="javax.swing.JTextField" name="gendertxt">
+            <Component class="javax.swing.JTextField" name="Gender">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gendertxtActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GenderActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="categeorytxt">
+            <Component class="javax.swing.JTextField" name="catageory">
             </Component>
             <Component class="javax.swing.JButton" name="ADD">
               <Properties>
@@ -273,6 +283,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="UPDATE"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UPDATEActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="ALLTHEPATIENT">
               <Properties>
@@ -321,6 +334,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="REMOVE"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="REMOVEActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="HOME">
               <Properties>
@@ -344,8 +360,71 @@
                 <Property name="text" type="java.lang.String" value="Email"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="mailtxt">
+            <Component class="javax.swing.JTextField" name="mail">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mailActionPerformed"/>
+              </Events>
             </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="patientTable">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="6" rowCount="4">
+                        <Column editable="true" title="Patient_ID" type="java.lang.Object"/>
+                        <Column editable="true" title="Patient Name" type="java.lang.Object"/>
+                        <Column editable="true" title="Age" type="java.lang.Object"/>
+                        <Column editable="true" title="Gender" type="java.lang.Object"/>
+                        <Column editable="true" title="Catageory" type="java.lang.Object"/>
+                        <Column editable="true" title="Email" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
       </SubComponents>
