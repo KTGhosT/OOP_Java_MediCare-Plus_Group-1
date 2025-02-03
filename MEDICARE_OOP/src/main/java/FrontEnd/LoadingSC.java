@@ -169,7 +169,8 @@ public class LoadingSC extends javax.swing.JFrame {
           }
           
           sp.dispose();
-          //new loginUI().setVisible(true);
+          LoginUI l = new LoginUI();
+          l.setVisible(true);
       }
       
       catch (Exception e)
