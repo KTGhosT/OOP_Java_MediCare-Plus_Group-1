@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ASUS
  */
-public class Manage_patient_Record extends javax.swing.JFrame {
+ public class Manage_patient_Record extends javax.swing.JFrame {
 
     /**
      * Creates new form Manage_patient_Record
