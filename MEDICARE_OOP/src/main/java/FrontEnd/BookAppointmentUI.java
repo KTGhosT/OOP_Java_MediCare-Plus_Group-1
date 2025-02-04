@@ -4,6 +4,8 @@
  */
 package FrontEnd;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
 /**
@@ -38,8 +40,8 @@ public class BookAppointmentUI extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         nametxt = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        idtxt = new javax.swing.JTextField();
+        didtxt = new javax.swing.JTextField();
         datetxt = new javax.swing.JTextField();
         mailtxt = new javax.swing.JTextField();
         bookbtn = new javax.swing.JButton();
@@ -103,15 +105,15 @@ public class BookAppointmentUI extends javax.swing.JFrame {
             }
         });
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        idtxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                idtxtActionPerformed(evt);
             }
         });
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        didtxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                didtxtActionPerformed(evt);
             }
         });
 
@@ -168,9 +170,9 @@ public class BookAppointmentUI extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(datetxt, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
                             .addComponent(nametxt, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
+                            .addComponent(didtxt, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)
                             .addComponent(mailtxt)
-                            .addComponent(jTextField2))
+                            .addComponent(idtxt))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                         .addComponent(homebtn)))
                 .addGap(29, 29, 29))
@@ -183,7 +185,7 @@ public class BookAppointmentUI extends javax.swing.JFrame {
                         .addGap(47, 47, 47)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(idtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(homebtn)))
@@ -194,7 +196,7 @@ public class BookAppointmentUI extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(didtxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
@@ -230,13 +232,13 @@ public class BookAppointmentUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nametxtActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void idtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idtxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_idtxtActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void didtxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_didtxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_didtxtActionPerformed
 
     private void datetxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datetxtActionPerformed
         // TODO add your handling code here:
@@ -248,13 +250,33 @@ public class BookAppointmentUI extends javax.swing.JFrame {
 
     private void bookbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookbtnActionPerformed
         
-        String mail = mailtxt.getText();
+        String id = idtxt.getText();
         String name = nametxt.getText();
+        String did = didtxt.getText();
         String date = datetxt.getText();
+        String mail = mailtxt.getText();
         
-        JavaMailSender.sendEmail(mail, name, date);
-        
-        JOptionPane.showMessageDialog(this, "Booked");
+        // Database connection & SQL Query
+        try (Connection conn = DatabaseConnection.getConnection();
+            PreparedStatement stmt = conn.prepareStatement("INSERT INTO appointments (patientId, patientName, doctorId, aDate, mail) VALUES (?, ?, ?, ?, ?)")) {
+
+            // Set values in query
+            stmt.setString(1, id);
+            stmt.setString(2, name);
+            stmt.setString(3, did);
+            stmt.setString(4, date);
+            stmt.setString(5, mail);
+
+            // Execute insert query
+            int rowsInserted = stmt.executeUpdate();
+            if (rowsInserted > 0) {
+                JavaMailSender.sendEmail(mail, name, date);
+                JOptionPane.showMessageDialog(this, "Booked!");
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error saving patient record!", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_bookbtnActionPerformed
 
     private void homebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homebtnActionPerformed
@@ -303,7 +325,9 @@ public class BookAppointmentUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bookbtn;
     private javax.swing.JTextField datetxt;
+    private javax.swing.JTextField didtxt;
     private javax.swing.JButton homebtn;
+    private javax.swing.JTextField idtxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -313,8 +337,6 @@ public class BookAppointmentUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField mailtxt;
     private javax.swing.JTextField nametxt;
     // End of variables declaration//GEN-END:variables
