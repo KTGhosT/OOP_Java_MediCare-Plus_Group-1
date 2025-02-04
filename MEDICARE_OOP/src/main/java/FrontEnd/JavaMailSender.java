@@ -30,7 +30,7 @@ public class JavaMailSender {
             message.setFrom(new InternetAddress(username));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(mail));
             message.setSubject("Book Appointment");
-            message.setText("Hello dear" +""+ name + ""+ "You have successfully booked an appointment on "+ date+""+" in MediCare plus");
+            message.setText("Hello dear" +" "+ name + ""+ "You have successfully booked an appointment on "+ date+""+" in MediCare plus");
 
             Transport.send(message);
             System.out.println("Email sent successfully!");
