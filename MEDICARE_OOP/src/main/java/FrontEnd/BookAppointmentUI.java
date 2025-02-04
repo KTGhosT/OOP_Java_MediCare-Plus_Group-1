@@ -256,6 +256,28 @@ public class BookAppointmentUI extends javax.swing.JFrame {
         String date = datetxt.getText();
         String mail = mailtxt.getText();
         
+        
+        if (id == null || name == null || did == null || date == null || mail== null ) {
+        JOptionPane.showMessageDialog(this, "One or more input fields are not initialized!", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    // Validate input fields
+    if (id.isEmpty() || name.isEmpty() || did.isEmpty() || date.isEmpty() || mail.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Please fill in all fields before booking.", "Input Error", JOptionPane.WARNING_MESSAGE);
+        return;
+    }
+    
+    if (mail.matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$")) {
+    System.out.println("✅ Valid email");
+    } else {
+    JOptionPane.showMessageDialog(this, "Incorrect Email format", "Input Error", JOptionPane.WARNING_MESSAGE);
+    System.out.println("❌ Invalid email");
+    
+    return;
+    }
+
+    
         // Database connection & SQL Query
         try (Connection conn = DatabaseConnection.getConnection();
             PreparedStatement stmt = conn.prepareStatement("INSERT INTO appointments (patientId, patientName, doctorId, aDate, mail) VALUES (?, ?, ?, ?, ?)")) {
