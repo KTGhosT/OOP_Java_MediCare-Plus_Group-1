@@ -239,19 +239,22 @@ public class DashboardUI extends javax.swing.JFrame {
     }//GEN-LAST:event_inventorybtnActionPerformed
 
     private void appointmentbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_appointmentbtnActionPerformed
-       // BookAppointments appointment = new BookAppointments();
-       // appointment.setVisible(true);
+       BookAppointmentUI appointment = new BookAppointmentUI();
+       appointment.setVisible(true);
         
         this.dispose();
     }//GEN-LAST:event_appointmentbtnActionPerformed
 
     private void reportbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportbtnActionPerformed
-        // TODO add your handling code here:
+       Monthly_report report = new  Monthly_report();
+       report.setVisible(true);
+       
+       this.dispose();
     }//GEN-LAST:event_reportbtnActionPerformed
 
     private void patientsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientsbtnActionPerformed
         
-        ManagePatientRecord patient = new ManagePatientRecord ();
+        Manage_patient_Record patient = new Manage_patient_Record ();
         patient.setVisible(true);
         
         this.dispose();
