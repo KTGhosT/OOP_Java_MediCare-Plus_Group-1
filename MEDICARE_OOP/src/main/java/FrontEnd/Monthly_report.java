@@ -4,6 +4,14 @@
  */
 package FrontEnd;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author A S U S
@@ -30,7 +38,7 @@ public class Monthly_report extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         alldetails = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        viewall_table = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,8 +76,8 @@ public class Monthly_report extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setBackground(new java.awt.Color(204, 204, 255));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        viewall_table.setBackground(new java.awt.Color(204, 204, 255));
+        viewall_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -88,7 +96,7 @@ public class Monthly_report extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(viewall_table);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -121,6 +129,70 @@ public class Monthly_report extends javax.swing.JFrame {
 
     private void alldetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alldetailsActionPerformed
         // TODO add your handling code here:
+         // Database connection details
+    String url = "jdbc:mysql://localhost:3306/medicare_plus";  // Change as per your DB
+    String user = "root";  // Your DB username
+    String password = "";  // Your DB password
+
+    // SQL Queries
+    String revenueQuery = "SELECT SUM(doctor_fee) AS total_revenue FROM doctor_fee";
+    String inventoryQuery = "SELECT DISTINCT inventoryID, Inventoryname FROM pharmacy";
+    String patientVisitsQuery = "SELECT COUNT(patientID) AS total_visits FROM `book appointment`";
+
+    DefaultTableModel model = (DefaultTableModel) viewall_table.getModel();
+    model.setRowCount(0); // Clear table before inserting new data
+
+    try {
+        // Load MySQL JDBC Driver
+        Class.forName("com.mysql.cj.jdbc.Driver");
+
+        // Fetch Revenue
+        try ( // Connect to Database
+                Connection con = DriverManager.getConnection(url, user, password)) {
+            // Fetch Revenue
+            PreparedStatement revStmt = con.prepareStatement(revenueQuery);
+            ResultSet revRs = revStmt.executeQuery();
+            String revenue = "0";
+            if (revRs.next()) {
+                revenue = revRs.getString("total_revenue");
+            }
+            
+            // Fetch Patient Visits
+            PreparedStatement visitStmt = con.prepareStatement(patientVisitsQuery);
+            ResultSet visitRs = visitStmt.executeQuery();
+            String patientVisits = "0";
+            if (visitRs.next()) {
+                patientVisits = visitRs.getString("total_visits");
+            }
+            
+            // Fetch Inventory Data and Populate Table
+            PreparedStatement invStmt = con.prepareStatement(inventoryQuery);
+            ResultSet invRs = invStmt.executeQuery();
+            while (invRs.next()) {
+                String inventoryID = invRs.getString("inventoryID");
+                String inventoryName = invRs.getString("Inventoryname");
+                
+                // Add Row to JTable
+                model.addRow(new Object[]{revenue, inventoryID + " - " + inventoryName, patientVisits});
+                
+                // Clear revenue and patient visits after first row to avoid duplication
+                revenue = "";
+                patientVisits = "";
+            }
+            
+            // Close resources
+            revRs.close();
+            revStmt.close();
+            visitRs.close();
+            visitStmt.close();
+            invRs.close();
+            invStmt.close();
+        }
+
+    } catch (ClassNotFoundException | SQLException e) {
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+    }
+
     }//GEN-LAST:event_alldetailsActionPerformed
 
     /**
@@ -163,6 +235,6 @@ public class Monthly_report extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable viewall_table;
     // End of variables declaration//GEN-END:variables
 }
