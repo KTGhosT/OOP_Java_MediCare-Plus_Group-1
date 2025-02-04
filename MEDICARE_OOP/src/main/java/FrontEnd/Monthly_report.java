@@ -4,6 +4,14 @@
  */
 package FrontEnd;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author A S U S
@@ -30,16 +38,16 @@ public class Monthly_report extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         alldetails = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        viewall_table = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 204));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Poppins ExtraBold", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Generate Monthly Report");
+        jLabel1.setText("GENERATE MONTHLY REPORT");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -47,7 +55,7 @@ public class Monthly_report extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -55,11 +63,11 @@ public class Monthly_report extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(138, 138, 138)
                 .addComponent(jLabel1)
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
 
         alldetails.setBackground(new java.awt.Color(0, 51, 204));
-        alldetails.setFont(new java.awt.Font("Segoe UI Variable", 3, 12)); // NOI18N
+        alldetails.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
         alldetails.setForeground(new java.awt.Color(255, 255, 255));
         alldetails.setText("GET ALL DETAILS");
         alldetails.addActionListener(new java.awt.event.ActionListener() {
@@ -68,7 +76,8 @@ public class Monthly_report extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        viewall_table.setBackground(new java.awt.Color(204, 204, 255));
+        viewall_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -76,7 +85,7 @@ public class Monthly_report extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Revenue", "Inventory Usage", "Patient Visits"
+                "Revenue", "Inventory Usage(Available stock)", "Patient Visits"
             }
         ) {
             Class[] types = new Class [] {
@@ -87,7 +96,7 @@ public class Monthly_report extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(viewall_table);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,12 +106,12 @@ public class Monthly_report extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
+                        .addGap(12, 12, 12)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(167, 167, 167)
+                        .addGap(123, 123, 123)
                         .addComponent(alldetails, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(269, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,6 +129,70 @@ public class Monthly_report extends javax.swing.JFrame {
 
     private void alldetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alldetailsActionPerformed
         // TODO add your handling code here:
+         // Database connection details
+    String url = "jdbc:mysql://localhost:3306/medicare_plus";  // Change as per your DB
+    String user = "root";  // Your DB username
+    String password = "";  // Your DB password
+
+    // SQL Queries
+    String revenueQuery = "SELECT SUM(doctor_fee) AS total_revenue FROM doctor_fee";
+    String inventoryQuery = "SELECT DISTINCT inventoryID, Inventoryname FROM pharmacy";
+    String patientVisitsQuery = "SELECT COUNT(patientID) AS total_visits FROM `book appointment`";
+
+    DefaultTableModel model = (DefaultTableModel) viewall_table.getModel();
+    model.setRowCount(0); // Clear table before inserting new data
+
+    try {
+        // Load MySQL JDBC Driver
+        Class.forName("com.mysql.cj.jdbc.Driver");
+
+        // Fetch Revenue
+        try ( // Connect to Database
+                Connection con = DriverManager.getConnection(url, user, password)) {
+            // Fetch Revenue
+            PreparedStatement revStmt = con.prepareStatement(revenueQuery);
+            ResultSet revRs = revStmt.executeQuery();
+            String revenue = "0";
+            if (revRs.next()) {
+                revenue = revRs.getString("total_revenue");
+            }
+            
+            // Fetch Patient Visits
+            PreparedStatement visitStmt = con.prepareStatement(patientVisitsQuery);
+            ResultSet visitRs = visitStmt.executeQuery();
+            String patientVisits = "0";
+            if (visitRs.next()) {
+                patientVisits = visitRs.getString("total_visits");
+            }
+            
+            // Fetch Inventory Data and Populate Table
+            PreparedStatement invStmt = con.prepareStatement(inventoryQuery);
+            ResultSet invRs = invStmt.executeQuery();
+            while (invRs.next()) {
+                String inventoryID = invRs.getString("inventoryID");
+                String inventoryName = invRs.getString("Inventoryname");
+                
+                // Add Row to JTable
+                model.addRow(new Object[]{revenue, inventoryID + " - " + inventoryName, patientVisits});
+                
+                // Clear revenue and patient visits after first row to avoid duplication
+                revenue = "";
+                patientVisits = "";
+            }
+            
+            // Close resources
+            revRs.close();
+            revStmt.close();
+            visitRs.close();
+            visitStmt.close();
+            invRs.close();
+            invStmt.close();
+        }
+
+    } catch (ClassNotFoundException | SQLException e) {
+        JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+    }
+
     }//GEN-LAST:event_alldetailsActionPerformed
 
     /**
@@ -162,6 +235,6 @@ public class Monthly_report extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable viewall_table;
     // End of variables declaration//GEN-END:variables
 }
