@@ -37,9 +37,9 @@ public class Monthly_report extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 51, 204));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Segoe Print", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Poppins ExtraBold", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Generate Monthly Report");
+        jLabel1.setText("GENERATE MONTHLY REPORT");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -47,7 +47,7 @@ public class Monthly_report extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -55,11 +55,11 @@ public class Monthly_report extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(138, 138, 138)
                 .addComponent(jLabel1)
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
 
         alldetails.setBackground(new java.awt.Color(0, 51, 204));
-        alldetails.setFont(new java.awt.Font("Segoe UI Variable", 3, 12)); // NOI18N
+        alldetails.setFont(new java.awt.Font("Segoe UI Variable", 1, 14)); // NOI18N
         alldetails.setForeground(new java.awt.Color(255, 255, 255));
         alldetails.setText("GET ALL DETAILS");
         alldetails.addActionListener(new java.awt.event.ActionListener() {
@@ -68,6 +68,7 @@ public class Monthly_report extends javax.swing.JFrame {
             }
         });
 
+        jTable1.setBackground(new java.awt.Color(204, 204, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -76,7 +77,7 @@ public class Monthly_report extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Revenue", "Inventory Usage", "Patient Visits"
+                "Revenue", "Inventory Usage(Available stock)", "Patient Visits"
             }
         ) {
             Class[] types = new Class [] {
@@ -97,12 +98,12 @@ public class Monthly_report extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
+                        .addGap(12, 12, 12)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(167, 167, 167)
+                        .addGap(123, 123, 123)
                         .addComponent(alldetails, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(269, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
