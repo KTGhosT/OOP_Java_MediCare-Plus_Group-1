@@ -55,7 +55,7 @@ public class Monthly_report extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -128,16 +128,12 @@ public class Monthly_report extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void alldetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alldetailsActionPerformed
-        // TODO add your handling code here:
-         // Database connection details
-    String url = "jdbc:mysql://localhost:3306/medicare_plus";  // Change as per your DB
-    String user = "root";  // Your DB username
-    String password = "";  // Your DB password
+
 
     // SQL Queries
-    String revenueQuery = "SELECT SUM(doctor_fee) AS total_revenue FROM doctor_fee";
-    String inventoryQuery = "SELECT DISTINCT inventoryID, Inventoryname FROM pharmacy";
-    String patientVisitsQuery = "SELECT COUNT(patientID) AS total_visits FROM `book appointment`";
+    String revenueQuery = "SELECT SUM(fee) AS total_revenue FROM doctor";
+    String inventoryQuery = "SELECT DISTINCT id, name FROM pharmacy";
+    String patientVisitsQuery = "SELECT COUNT(patientId) AS total_visits FROM appointments";
 
     DefaultTableModel model = (DefaultTableModel) viewall_table.getModel();
     model.setRowCount(0); // Clear table before inserting new data
@@ -148,7 +144,7 @@ public class Monthly_report extends javax.swing.JFrame {
 
         // Fetch Revenue
         try ( // Connect to Database
-                Connection con = DriverManager.getConnection(url, user, password)) {
+                Connection con = DatabaseConnection.getConnection()) {
             // Fetch Revenue
             PreparedStatement revStmt = con.prepareStatement(revenueQuery);
             ResultSet revRs = revStmt.executeQuery();
@@ -169,8 +165,8 @@ public class Monthly_report extends javax.swing.JFrame {
             PreparedStatement invStmt = con.prepareStatement(inventoryQuery);
             ResultSet invRs = invStmt.executeQuery();
             while (invRs.next()) {
-                String inventoryID = invRs.getString("inventoryID");
-                String inventoryName = invRs.getString("Inventoryname");
+                String inventoryID = invRs.getString("id");
+                String inventoryName = invRs.getString("name");
                 
                 // Add Row to JTable
                 model.addRow(new Object[]{revenue, inventoryID + " - " + inventoryName, patientVisits});
