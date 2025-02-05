@@ -1,3 +1,5 @@
+package FrontEnd;
+
 import FrontEnd.JavaMailSender;
 import FrontEnd.Outofstock;
 import java.sql.Connection;
@@ -21,7 +23,7 @@ public class CheckAvailability {
             
             while (rs.next()) {
                 stockEmpty = true;
-                medicineList.append(rs.getString("medicine_name")).append("\n");
+                medicineList.append(rs.getString("name")).append("\n");
             }
 
             if (stockEmpty) {

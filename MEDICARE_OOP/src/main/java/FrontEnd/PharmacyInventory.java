@@ -384,6 +384,8 @@ public class PharmacyInventory extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Error updating inventory record: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         // Log the error for debugging
     }
+    
+    CheckAvailability.checkAllMedicines(availa);
 
     
     }//GEN-LAST:event_update_btnActionPerformed
