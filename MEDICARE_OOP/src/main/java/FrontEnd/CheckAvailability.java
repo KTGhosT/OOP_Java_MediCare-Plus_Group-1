@@ -28,8 +28,8 @@ public class CheckAvailability {
 
             if (stockEmpty) {
                 System.out.println("Some medicines are out of stock! Sending email...");
-                Outofstock.sendEmail("KT_Ghosty@hotmail.com", "Out of Stock Medicines" +
-                    "The following medicines are out of stock:\n" + medicineList.toString());
+                Outofstock.sendEmail("KT_Ghosty@hotmail.com", "Out of Stock Medicines," +
+                    " The following medicines are out of stock:\n" + medicineList.toString());
             } else {
                 System.out.println("All medicines are in stock.");
             }
