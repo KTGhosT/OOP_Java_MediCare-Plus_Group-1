@@ -385,7 +385,7 @@ public class PharmacyInventory extends javax.swing.JFrame {
         // Log the error for debugging
     }
 
-        
+    
     }//GEN-LAST:event_update_btnActionPerformed
 
     private void remove_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_remove_btnActionPerformed
