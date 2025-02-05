@@ -18,15 +18,15 @@ public class CheckAvailability {
              PreparedStatement stmt = conn.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
              
-            boolean stockEmpty = false;
+            boolean stocklow = false;
             StringBuilder medicineList = new StringBuilder();
             
             while (rs.next()) {
-                stockEmpty = true;
+                stocklow = true;
                 medicineList.append(rs.getString("name")).append("\n");
             }
 
-            if (stockEmpty) {
+            if (stocklow) {
                 System.out.println("Some medicines are out of stock! Sending email...");
                 Outofstock.sendEmail("KT_Ghosty@hotmail.com", "Out of Stock Medicines," +
                     " The following medicines are out of stock:\n" + medicineList.toString());
